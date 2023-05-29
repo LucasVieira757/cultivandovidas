@@ -7,37 +7,92 @@
 
 
 header {
-    background-image: linear-gradient(to right top, #230537, #331a5e, #3d3189, #3b4bb9, #1267eb);
+    background: linear-gradient(45deg, #000850 0%, #000320 100%), radial-gradient(100% 225% at 100% 0%, #FF6928 0%, #000000 100%), linear-gradient(225deg, #FF7A00 0%, #000000 100%), linear-gradient(135deg, #CDFFEB 10%, #CDFFEB 35%, #009F9D 35%, #009F9D 60%, #07456F 60%, #07456F 67%, #0F0A3C 67%, #0F0A3C 100%);
+    background-blend-mode: screen, overlay, hard-light, normal;
+    padding: 10px;
     text-align: center;
+}
+
+header h1 {
+    font-size: 30px;
+    font-weight: normal;
+}
+
+header p {
+    font-size: 15px;
+}
+
+header img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+
+.container {
+    width: 900px;
+    margin: 0 auto;
+    padding: 10px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+
 }
 
 nav ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-    
+    background-color: #000;
+    padding: 10px;
 
 }
 
 nav li {
     display: inline-block;
-    margin: 0 10px;
-    
-
+    margin: 0 5px;
 }
 
 nav a {
-    color: #fff;
     text-decoration: none;
-    padding: 10px 20px;
-    display: block;
-    }
-    nav a:hover {
-        background-color: #111;
-
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 303px;
 }
+
+nav a:hover {
+    background-color: #fff;
+    color: #000;
+    margin-left: 303px;
+}
+@media screen and (max-width: 600px) {
+    nav a {
+       float: none;
+       width: 100%;
+       margin-left: 0;
+    }
+    .container{
+        float: none;
+        width: 100%;
+       margin-left: 0;
+
+    }
+
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 main {
@@ -95,18 +150,21 @@ main {
 .devocional-content .devocional-author span {
     font-weight: bold;
 }
-p{
+
+p {
     font-size: 16px;
     line-height: 1.5;
     margin-bottom: 20px;
-    }
-    .devocional-content.devocional-author {
-        margin-top: 20px;
+}
+
+.devocional-content.devocional-author {
+    margin-top: 20px;
 
 }
-footer{
+
+footer {
     background-color: #000;
     color: #fff;
     padding: 20px 0;
- text-align: center;
-    }
+    text-align: center;
+}
