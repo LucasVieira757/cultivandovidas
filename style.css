@@ -1,0 +1,112 @@
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+header {
+    background-image: linear-gradient(to right top, #230537, #331a5e, #3d3189, #3b4bb9, #1267eb);
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    
+
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 10px;
+    
+
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    }
+    nav a:hover {
+        background-color: #111;
+
+}
+
+
+main {
+    background-color: #ffffff;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 3px 3px 3px #000000;
+}
+
+.devocional {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.devocional-header {
+    margin-bottom: 20px;
+}
+
+.devocional-header h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.devocional-header p {
+    font-size: 16px;
+    color: #666;
+}
+
+.devocional-content h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.devocional-content p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.devocional-content .devocional-author {
+    margin-top: 20px;
+}
+
+.devocional-content .devocional-author p {
+    font-size: 14px;
+    color: #666;
+    text-align: right;
+}
+
+.devocional-content .devocional-author span {
+    font-weight: bold;
+}
+p{
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    }
+    .devocional-content.devocional-author {
+        margin-top: 20px;
+
+}
+footer{
+    background-color: #000;
+    color: #fff;
+    padding: 20px 0;
+ text-align: center;
+    }
