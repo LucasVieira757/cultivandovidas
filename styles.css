@@ -1,54 +1,240 @@
 body {
     margin: 0;
-   }
-   
-  header {
-    background-image: linear-gradient(to right top, #230537, #331a5e, #3d3189, #3b4bb9, #1267eb);
+}
+
+header {
     text-align: center;
-  }
-  
-  nav ul {
-    list-style: none;
+    padding: 10px 0;
+    background-image: url('../imagens/fundo-topo.jpg')
+}
+
+header h1 {
     margin: 0;
-    padding: 0;
-  }
-  
-  nav li {
+    height: 84px;
+}
+
+#cssmenu
+{
+    width:auto;
+    display:block;
+    text-align:center;
+    font-family:"Pathway Gothic One", Helvetica, Arial, sans-serif;
+    line-height:1.2;
+}
+#cssmenu ul
+{
+    width:auto;
+    display:block;
+    font-size:0;
+    text-align:center;
+    color:#000000;
+    background-color: #FFFFFF;
+    border: transparent;
+    margin:0; 
+    padding:0;
+    list-style:none;
+    position:relative;
+    z-index:999999990;
+    border-radius: 3px;
+} 
+
+#cssmenu li
+{
+    display:inline-block;
+    position:relative;    
+    font-size:0; 
+    margin:0;
+    padding:0;
+}
+
+/*Top level items
+---------------------------------------*/
+
+#cssmenu >ul>li>span, #cssmenu >ul>li>a 
+{   
+    font-size:22px;
+    color:inherit;
+    text-decoration:none;
+    padding:20px 20px; 
+    font-weight:400;
+    text-transform:uppercase;
+    letter-spacing:2px;   
+    display:block;   
+    position:relative;
+    transition:all 0.3s;
+}
+#cssmenu li:hover > span, #cssmenu li:hover > a
+{  
+    color:#FFFFFF;
+    background-color:#77A6F7;
+}
+
+/*Sub level items
+---------------------------------------*/
+#cssmenu .dropdown
+{
+    text-align:left;
+    left:0;
+    font-family:inherit;
+    color: #222222;
+    background-color:#FFFFFF;
+    border:none;
+    position:absolute;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    display:none;
+    opacity:0;
+    cursor:default;
+}
+
+#cssmenu .dropdown li {
+    display: block;  
+}
+
+#cssmenu .dropdown li > span, #cssmenu .dropdown li > a, #cssmenu .clm a, #cssmenu .clm h3 
+{
+    font-size:16px;
+    font-weight:400;
+    font-family:inherit;
+    margin:0;
+    padding:8px 20px; 
+    display:block;
+    color:inherit;
+    text-decoration:none;
+}
+#cssmenu .clm h3 {
+    font-size:20px;
+    font-weight:700;
+}
+#cssmenu .sub-item {
+    background-color:#FFFFFF;
+    position:relative;       
+    transition:all 0.3s;
+}
+
+#cssmenu .dropdown li:hover > span, #cssmenu .dropdown li:hover > a
+{
+
+    color:#000000;
+    background-color:#EEEEEE;
+}
+
+#cssmenu .clm a:hover
+{
+    color:#000000;
+    transition:color 0.2s;
+}
+
+#cssmenu .dropdown.right0 {left:auto;right:0;} 
+#cssmenu .dropdown li > .dropdown.right0 {left:auto;right:100%;} 
+       
+#cssmenu li.full-width{
+    position:static;
+}
+#cssmenu li.full-width .dropdown{
+    width:100%;
+    left:0;
+    box-sizing:border-box;
+}  
+
+#cssmenu li:hover > .dropdown
+{
+    display:block;
+    opacity:1;
+    z-index:1;
+}
+
+#cssmenu .dropdown li > .dropdown
+{
+    left:100%; right:auto;
+    top:0;
+}
+
+#cssmenu ul.dropdown
+{
+    min-width:240px; /* Sub level menu min width */
+}
+
+#cssmenu div.dropdown  {
+    text-align:center;
+}
+
+/* each column */
+#cssmenu .clm
+{
+    text-align:left;
+    margin:20px;
+    vertical-align:top;/*or middle*/
+    width:auto;
+    min-width:240px;
+    display:inline-block;
+    *display:inline;*zoom:1;
+}
+
+#cssmenu .clm a:hover
+{
+    color:#000000;
+    text-decoration:underline;
+}
+
+/*-----------Arrows----------------*/
+#cssmenu .arrow {
+    color:inherit;
+    border-style:solid; border-width:2px 2px 0 0; padding:5px; transform:rotate(135deg);margin-top:-10px;margin-left:5px;
+    position:relative;
     display: inline-block;
-    margin: 0 10px;
-  }
-  
-  nav a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  main {
+    width: 0;
+    height: 0;
+    vertical-align:middle;
+    overflow:hidden;/*for IE6*/
+}
+        
+#cssmenu .dropdown .arrow {
+    transform:rotate(45deg);
+    top:50%;margin-top:-7px;
+    position:absolute;left:auto;right:20px;
+} 
+
+
+
+@keyframes topItemAnimation{
+  from {opacity: 0;  transform:translate3d(-16%, 0, 0);}
+  to {opacity: 1; transform:translate3d(0, 0, 0);}
+}
+#cssmenu li a {animation:none;}
+#cssmenu.active li a { animation: topItemAnimation 0.5s ease 0.5s backwards;}
+#cssmenu.active li:nth-of-type(1) a { animation: topItemAnimation 0.5s ease 0.08333333333333333s backwards;}
+#cssmenu.active li:nth-of-type(2) a { animation: topItemAnimation 0.5s ease 0.16666666666666666s backwards;}
+#cssmenu.active li:nth-of-type(3) a { animation: topItemAnimation 0.5s ease 0.25s backwards;}
+#cssmenu.active li:nth-of-type(4) a { animation: topItemAnimation 0.5s ease 0.3333333333333333s backwards;}
+#cssmenu.active li:nth-of-type(5) a { animation: topItemAnimation 0.5s ease 0.4166666666666667s backwards;}@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { #cssmenu.active li a{animation:none!important;}}
+
+
+main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 20px;
-  }
-  
-  section {
+}
+
+section {
     background-image: linear-gradient(to right top, #d16ba5, #d66fb0, #db74bb, #df79c6, #e37ed2, #d18fe7, #bd9ff6, #a9aeff, #7ac6ff, #46dbff, #31edff, #5ffbf1);
     padding: 20px;
     text-align: center;
     width: 300px;
     border-radius: 5px;
-  }
-  
-  section h2 {
+}
+
+section h2 {
     font-size: 24px;
     margin-top: 0;
-  }
-  
-  section p {
+}
+
+section p {
     font-size: 16px;
     margin-bottom: 20px;
-  }
-  
-  .button {
+}
+
+.button {
     background-color: #333;
     border: none;
     border-radius: 5px;
@@ -59,14 +245,39 @@ body {
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
-  }
-  
-  .button:hover {
+}
+
+.button:hover {
     background-color: #555;
-  }
-  footer{
+}
+
+footer {
     background-color: #000;
     color: #fff;
     padding: 20px 0;
- text-align: center;
+    text-align: center;
+}
+.container {
+    width: 900px;
+    margin: 0 auto;
+    padding: 10px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
     }
+
+  
+    @media screen and (max-width: 600px) {
+      main {
+           float: none;
+           width: 100%;
+           margin-left: 0;
+        }
+        .container{
+            float: none;
+            width: 100%;
+           margin-left: 0;
+    
+        }
+    
+     }
